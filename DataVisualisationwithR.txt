@@ -1,0 +1,67 @@
+2+7
+4*5
+a = 20
+a
+a <- 28
+a
+help(start)
+help(mean)
+search()
+installed.packages()
+abs(12-17*2/3-9)
+factorial(5)
+log(2,10)
+sin(45)
+data1 <- c(3,5,7,8,9)
+data1
+data2 = scan()
+data3
+data4 = scan()
+install.packages(ggplot)
+install.packages("ggplot2")
+require(ggplot2)
+data(diamonds)
+head(diamonds)
+hist(diamonds$carat, main = "Carat Histogram", xlab = "Carat")
+plot(price ~ carat, data = diamonds)
+boxplot(diamonds$carat)
+ggplot(data = diamonds) + geom_histogram(aes(x = carat))
+hist(diamonds$carat, main = "Carat Histogram", xlab = "Carat")
+ggplot(data = diamonds) + geom_histogram(aes(x = carat))
+ggplot(data = diamonds) + geom_density(aes(x = carat), fill = "grey50")
+ggplot(diamonds, aes(x = carat, y = price)) + geom_point()
+g <- ggplot(diamonds, aes(x = carat, y = price))
+g + geom_point(aes(color = color))
+g + geom_point(aes(color = color)) + facet_wrap(~color)
+g + geom_point(aes(color = color)) + facet_grid(cut ~ clarity)
+ggplot(diamonds, aes(y = carat, x = 1)) + geom_boxplot()
+ggplot(diamonds, aes(y = carat, x = cut)) + geom_boxplot()
+ggplot(diamonds, aes(y = carat, x = cut)) + geom_violin()
+ggplot(diamonds, aes(y = carat, x = cut)) + geom_violin() + geom_point()
+data("economics")
+head(economics)
+ggplot(economics, aes(x = date, y = pop))+geom_line()
+install.packages("lubridate", dependencies = TRUE)
+require(lubridate)
+head(economics)
+economics$year <- year(economics$date)
+economics$month <- month(economics$date, label = TRUE)
+head(economics)
+econ2000 <- economics[which(economics$year>=2000),]
+econ2000
+library(scales)
+g <- ggplot(econ2000, aes(x = month, y = pop))
+library(ggplot2)
+g <- ggplot(econ2000, aes(x = month, y = pop))
+g <- g+ geom_line(aes(color=factor(year), group = year))
+g
+g <- g + scale_color_discrete(name = "year")
+g
+g <- g + scale_y_continuous(labels = comma)
+g
+g <- g + scale_color_discrete(name = "year")
+g
+g <- g + scale_y_continuous(labels = comma)
+g
+g <- g + labs(title = "population growth", x = "Month", y="Population")
+g
